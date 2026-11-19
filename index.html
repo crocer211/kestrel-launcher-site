@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kestrel Launcher — Dual-Edition Minecraft Launcher for Windows</title>
+  <meta name="description" content="Kestrel Launcher is a lightweight native Windows launcher for Minecraft: Java Edition and Bedrock Edition with isolated instances, mod/pack management, and Microsoft account sign-in." />
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #09090b;
+      --card: rgba(24, 24, 27, 0.72);
+      --border: rgba(63, 63, 70, 0.6);
+      --text: #f4f4f5;
+      --muted: #a1a1aa;
+      --emerald: #10b981;
+      --sky: #38bdf8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+      background:
+        radial-gradient(900px 500px at 85% -10%, rgba(16, 185, 129, 0.14), transparent 60%),
+        radial-gradient(700px 450px at 10% 10%, rgba(56, 189, 248, 0.12), transparent 60%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 980px; margin: 0 auto; padding: 32px 24px 72px; }
+    header {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; padding-bottom: 48px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 18px; letter-spacing: -0.02em; }
+    .badge {
+      width: 34px; height: 34px; border-radius: 10px;
+      background: linear-gradient(135deg, #10b981, #0ea5e9);
+      display: grid; place-items: center; color: #09090b; font-weight: 900; font-size: 16px;
+    }
+    nav a { color: var(--muted); text-decoration: none; font-size: 14px; margin-left: 20px; }
+    nav a:hover { color: var(--text); }
+    .hero {
+      padding: 40px 32px; border-radius: 20px;
+      background: linear-gradient(180deg, rgba(24,24,27,0.85), rgba(24,24,27,0.55));
+      border: 1px solid var(--border);
+      margin-bottom: 36px;
+    }
+    .pill {
+      display: inline-block; padding: 4px 12px; border-radius: 999px;
+      background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.35);
+      color: #6ee7b7; font-size: 12px; font-weight: 600; margin-bottom: 14px;
+    }
+    h1 { margin: 0 0 12px; font-size: clamp(28px, 4vw, 42px); line-height: 1.15; letter-spacing: -0.03em; }
+    .lead { margin: 0; color: var(--muted); font-size: 16px; max-width: 680px; }
+    .grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px; margin-bottom: 40px;
+    }
+    .card {
+      padding: 22px; border-radius: 16px;
+      background: var(--card); border: 1px solid var(--border);
+    }
+    .card h3 { margin: 0 0 8px; font-size: 16px; color: var(--text); }
+    .card p { margin: 0; font-size: 14px; color: var(--muted); }
+    .section {
+      padding: 24px; border-radius: 16px; background: var(--card); border: 1px solid var(--border);
+      margin-bottom: 24px;
+    }
+    .section h2 { margin: 0 0 10px; font-size: 18px; }
+    .section p { margin: 0 0 10px; font-size: 14px; color: var(--muted); }
+    .section p:last-child { margin-bottom: 0; }
+    footer {
+      margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border);
+      font-size: 12px; color: #71717a; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px;
+    }
+    footer a { color: #a1a1aa; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="badge">K</div>
+        <span>Kestrel Launcher</span>
+      </div>
+      <nav>
+        <a href="#features">Features</a>
+        <a href="#auth">Account &amp; Security</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="pill">Windows Desktop Launcher • Rust + WebView2</div>
+      <h1>Isolated Minecraft instances for Java &amp; Bedrock, without the bloat.</h1>
+      <p class="lead">
+        Kestrel Launcher is a lightweight native Windows launcher designed to keep every modded setup,
+        world, resource pack, and runtime cleanly isolated per instance.
+      </p>
+    </section>
+
+    <section id="features" class="grid">
+      <div class="card">
+        <h3>Dual-Edition Isolation</h3>
+        <p>Create independent Java Edition (Vanilla, Fabric, Quilt, Forge, NeoForge) and Windows Bedrock Edition instances with separate saves, packs, and settings.</p>
+      </div>
+      <div class="card">
+        <h3>Mods, Modpacks &amp; Packs</h3>
+        <p>Browse and install Modrinth and CurseForge mods, modpacks, shaders, and resource packs, or share compatible packs across instances.</p>
+      </div>
+      <div class="card">
+        <h3>Worlds, Servers &amp; Diagnostics</h3>
+        <p>One-click world backups, saved server list with live status ping, screenshot gallery, playtime tracking, and crash log analysis.</p>
+      </div>
+      <div class="card">
+        <h3>Native &amp; Lightweight</h3>
+        <p>Built with a native Rust backend and Windows WebView2 instead of bundling Chromium or an extra JVM for the launcher interface.</p>
+      </div>
+    </section>
+
+    <section id="auth" class="section">
+      <h2>Microsoft Account Authentication</h2>
+      <p>
+        Kestrel Launcher uses standard Microsoft OAuth 2.0 to authenticate players with their own Microsoft accounts,
+        verify Minecraft: Java Edition ownership, and obtain a session token to launch the game and join multiplayer servers.
+      </p>
+      <p>
+        All authentication tokens are stored locally on your Windows device and are sent only to official Microsoft,
+        Xbox Live, and Mojang authentication endpoints. No credentials or tokens are ever transmitted to third-party servers.
+      </p>
+    </section>
+
+    <footer>
+      <div>
+        <strong>Not an official Minecraft product.</strong> Not approved by or associated with Mojang or Microsoft.
+      </div>
+      <div>
+        <a href="privacy.html">Privacy Policy</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
