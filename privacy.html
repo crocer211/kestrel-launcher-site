@@ -42,15 +42,27 @@
       <li>Retrieve your Minecraft profile (username and UUID) and short-lived game session token.</li>
     </ul>
     <p>
-      Authentication tokens are stored locally on your machine in your user application data directory
-      (<code>%APPDATA%\Kestrel\</code>) and are never sent to the developer or any third party.
+      To keep you signed in across sessions, both your Microsoft refresh token and your short-lived Minecraft session
+      token are stored locally on your machine inside <code>%APPDATA%\Kestrel\accounts.json</code>, encrypted at rest
+      using <strong>Windows DPAPI</strong> (scoped to your current Windows user account). Tokens are never sent to the
+      developer or any third party.
     </p>
 
     <h2>2. Third-Party Content APIs</h2>
     <p>
-      When you search or download mods, modpacks, resource packs, shaders, or engine updates, Kestrel Launcher makes
-      direct requests from your device to the respective public APIs (such as Mojang, Modrinth, CurseForge, Adoptium,
-      or GitHub). Those requests are subject to each provider's own privacy policy.
+      When you install loaders, search content, or check for updates, Kestrel Launcher makes direct requests from your
+      device to the respective third-party services:
+    </p>
+    <ul>
+      <li><strong>Mojang / Microsoft</strong> (game manifests, assets, authentication, and entitlement checks)</li>
+      <li><strong>Modrinth</strong> &amp; <strong>CurseForge</strong> (mods, modpacks, resource packs, and shaders)</li>
+      <li><strong>Fabric</strong>, <strong>Quilt</strong>, <strong>Forge</strong>, &amp; <strong>NeoForge</strong> Maven/meta servers (mod loader metadata and artifacts)</li>
+      <li><strong>Adoptium</strong> (Eclipse Temurin Java runtime downloads)</li>
+      <li><strong>authlib-injector</strong> (<code>authlib-injector.yushi.moe</code> — downloaded for offline profiles only to render local skins/capes)</li>
+      <li><strong>GitHub</strong> (launcher updates and optional <strong>Horizon</strong> external engine releases)</li>
+    </ul>
+    <p>
+      Those requests are subject to each provider's own privacy policy.
     </p>
 
     <h2>3. Local Data</h2>
@@ -64,6 +76,13 @@
     <p>
       Kestrel Launcher is an independent third-party launcher. It is not an official Minecraft product and is not
       approved by or associated with Mojang AB or Microsoft Corporation.
+    </p>
+
+    <h2>5. Contact</h2>
+    <p>
+      Questions, bug reports, or privacy inquiries can be submitted via our
+      <a href="https://github.com/crocer211/kestrel-launcher/issues" target="_blank" rel="noreferrer">GitHub Issues</a>
+      page.
     </p>
   </div>
 </body>
